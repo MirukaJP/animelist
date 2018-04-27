@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>名探偵コナン TVアニメ リスト</title>
+	
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header></header>
+	<div>
+		<p>message</p>
+		
+		<div class="AnimeList">
+			<table id="animeList" class="AnimeList__table">
+				<thead class="AnimeList__table-header">
+					<tr>
+						<th class="AnimeList__item-name">話数</th>
+						<th class="AnimeList__item-name">タイトル</th>
+						<th class="AnimeList__item-name">放送日</th>
+						<th class="AnimeList__item-name">タグ</th>
+					</tr>
+				</thead>
+				<tbody class="AnimeList__table-body">
+					<tr class="AnimeList__story" v-for="story in newStories" v-bind:data-importance="story.importance">
+						<td class="AnimeList__story-id">{{story.id}}話</td>
+						<td class="AnimeList__story-title">{{story.title}}</td>
+						<td class="AnimeList__story-date">{{story.date}}</td>
+						<td class="AnimeList__story-tags">{{story.tags}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<p><test></test></p>
+	<footer></footer>
+	
+	<!-- Script -->
+	<script src="lib/vue.js"></script>
+	<script src="assets/animelist.js"></script>
+<!--	<script src="assets/components.js"></script>-->
+	
+	<!-- Data -->
+<!--	<script src="lib/data-story-tv.js"></script>-->
+</body>
+</html>

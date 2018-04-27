@@ -1,0 +1,26 @@
+.AnimeList {}
+.AnimeList__table {
+	width: 100%;
+	
+	tr {
+		border: 1px solid $border-color;
+	}
+	td, th {
+		padding: 0.5rem
+	}
+}
+.AnimeList__table-header {
+	background-color: $al-thead-bg;
+}
+.AnimeList__table-body {}
+.AnimeList__item-name {}
+.AnimeList__story {
+	background-color: $al-story-bg;
+	&:nth-child(2n) {
+		background-color: darken($al-story-bg, 2%);
+	}
+}
+.AnimeList__story-id {}
+.AnimeList__story-title {}
+.AnimeList__story-date {}
+.AnimeList__story-tags {}

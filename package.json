@@ -1,0 +1,26 @@
+{
+  "name": "pj-animelist",
+  "version": "1.0.0",
+  "description": "Anime Stories List.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MirukaJP/animelist.git"
+  },
+  "keywords": [
+    "anime"
+  ],
+  "author": "Miruka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MirukaJP/animelist/issues"
+  },
+  "homepage": "https://github.com/MirukaJP/animelist#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "vue": "^2.5.16"
+  }
+}
