@@ -1,26 +1,159 @@
-.AnimeList {}
+.AnimeList {
+	margin-bottom: 2rem;
+}
 .AnimeList__table {
+	display: block;
 	width: 100%;
 	
-	tr {
-		border: 1px solid $border-color;
+	tr + tr {
+		border-top: 1px solid $border-color;
 	}
 	td, th {
-		padding: 0.5rem
+		padding: 0.5rem 1rem;
 	}
 }
 .AnimeList__table-header {
+	display: none;
 	background-color: $al-thead-bg;
 }
-.AnimeList__table-body {}
-.AnimeList__item-name {}
+.AnimeList__table-body {
+	display: block;
+}
+.AnimeList__item-name {
+	color: $primary-700;
+}
+.story-badge {
+	display: inline-block;
+//	position: absolute;
+//	top: 3px;
+//	left: 3px;
+	margin: 0.125rem 0;
+	padding: 0.125rem 0.5rem;
+	border-radius: 1rem;
+	font-size: 0.75rem;
+	word-break: keep-all;
+	white-space: nowrap;
+}
 .AnimeList__story {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	padding: 0.5rem 0;
+	
 	background-color: $al-story-bg;
-	&:nth-child(2n) {
-		background-color: darken($al-story-bg, 2%);
+//	&:nth-child(2n) {
+//		background-color: darken($al-story-bg, 2%);
+//	}
+}
+.AnimeList__story-id {
+	flex: 0 0 5.5rem;
+	order: 1;
+	
+	width: 6rem;
+//	background-color: #ffc;
+//	text-align: right;
+}
+.AnimeList__story-title {
+	flex: 1 1 calc(100% - 5.5rem - 10.625rem);
+	order: 2;
+	
+	font-weight: bold;
+}
+.AnimeList__story-date {
+	flex: 0 0 10.625rem;
+	order: 3;
+	
+//	text-align: center;
+}
+.AnimeList__story-tags {
+	flex: 1 1 100%;
+	order: 4;
+
+	&[data-importance="3"]:before {
+		@extend .story-badge;
+		content: "重要回";
+		background-color: $red;
+		color: $white;
+	}
+	&[data-importance="2"]:before {
+		@extend .story-badge;
+		content: "関連あり";
+		background-color: $primary;
+		color: $white;
+	}
+	&[data-importance="1"]:before {
+		@extend .story-badge;
+		content: "主要キャラ";
+		background-color: $primary-300;
+		color: $white;
+	}
+	&[data-importance="0"]:before {
+		@extend .story-badge;
+		content: "関連なし";
+		background-color: $gray-200;
+		color: $gray-500;
 	}
 }
-.AnimeList__story-id {}
-.AnimeList__story-title {}
-.AnimeList__story-date {}
-.AnimeList__story-tags {}
+.AnimeList__story-tag {
+	@extend .story-badge;
+	display: inline-block;
+	background-color: $gray-200;
+}
+.AnimeList__label {
+//	display: none;
+	display: inline-block;
+	//		margin-left: 0.5rem;
+	//		padding: 1px 0.5rem;
+	//		background-color: #ccc;
+	color: $gray-500;
+	font-size: 0.75rem;
+}
+
+
+// Mobile
+@media (max-width: $breakpoint-lg-max) {
+//	.AnimeList__table {
+//		display: block;
+//	}
+//	.AnimeList__table-header {
+//		display: none;
+//	}
+//	.AnimeList__item-name {
+//		flex: 1 1 auto;
+//	}
+//	.AnimeList__table-body {
+//		display: block;
+//	}
+//	.AnimeList__story {
+//		display: flex;
+//		flex-wrap: wrap;
+//		padding: 0.5rem 0;
+//	}
+	.AnimeList__story-id {
+		flex: 0 0 5.5rem;
+		order: 1;
+		margin-right: auto;
+		text-align: left;
+	}
+	.AnimeList__story-title {
+		flex: 1 1 100%;
+		order: 3;
+		padding: 0 1rem !important;
+		font-size: 1.25rem;
+	}
+	.AnimeList__story-date {
+//		flex: 0 0 auto;
+		order: 2;
+	}
+	.AnimeList__story-tags {
+		flex: 1 1 100%;
+		order: 4;
+	}
+	.AnimeList__label {
+		display: inline-block;
+//		margin-left: 0.5rem;
+//		padding: 1px 0.5rem;
+//		background-color: #ccc;
+		font-size: 0.75rem;
+	}
+}

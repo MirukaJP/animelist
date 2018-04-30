@@ -21,6 +21,17 @@
   "homepage": "https://github.com/MirukaJP/animelist#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "vue": "^2.5.16"
+    "gulp-cheerio": "^0.6.3",
+    "gulp-path": "^4.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.1.1",
+    "gulp-template": "^5.0.0",
+    "vue": "^2.5.16",
+    "vue-scrollto": "^2.11.0"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.0.1"
   }
 }
