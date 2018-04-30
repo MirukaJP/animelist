@@ -1,0 +1,27 @@
+.Request{
+//	padding: 2rem 0;
+}
+.Request__heading {
+	color: $primary;
+}
+.Request__desc {
+	color: $gray-600;
+}
+
+// Mobile
+@media (max-width: $breakpoint-md-max) {
+	.Request {
+		padding-right: 2rem;
+		padding-bottom: 2rem;
+		padding-left: 2rem;
+	}
+}
+
+// Tablet
+@media (min-width: $breakpoint-sm-min) {
+	.Request{
+		padding-right: 0;
+		padding-bottom: 0;
+		padding-left: 0;
+	}
+}

@@ -1,0 +1,9 @@
+.c-Flex {
+	display: flex;
+}
+.c-Flex__item {
+	flex: 0 0 auto;
+}
+.c-Flex__item--stretch {
+	flex: 1 1 auto;
+}

@@ -1,0 +1,25 @@
+.Header {
+	display: flex;
+	z-index: $zindex-header;
+	width: 100%;
+	height: $header-height;
+	background-color: $header-bg;
+	color: $header-color;
+}
+.Header__title {
+	margin-right: auto;
+	padding-left: 1rem;
+	font-size: 1.5rem;
+	line-height: $header-height;
+}
+
+// Mobile
+@media (max-width: $breakpoint-md-max) {
+	.Header {
+		height: $header-height-sm;
+	}
+	.Header__title {
+		font-size: 1.25rem;
+		line-height: $header-height-sm;
+	}
+}

@@ -1,0 +1,68 @@
+.l-Index {
+	padding-top: $header-height;
+	background-color: $gray-800;
+}
+.l-Index__header {
+	position: fixed;
+	top: 0;
+	left: 0;
+//	background-color: #ffc;
+}
+.l-Index__hero {
+//	min-height: 20rem;
+	background-color: $primary;
+}
+.l-Index__contents {
+	background-color: $gray-100;
+}
+.l-Index__side {
+	background-color: $gray-100;
+}
+.l-Index__footer {
+//	background-color: #ccc;
+}
+
+// Mobile
+@media (max-width: $breakpoint-md-max) {
+	.l-Index {
+		padding-top: $header-height-sm;
+	}
+}
+
+// Tablet
+@media (min-width: $breakpoint-sm-min) {
+	.l-Index__contents {
+		padding: 2rem;
+	}
+	.l-Index__side {
+		padding: 2rem;
+	}
+}
+
+// PC
+@media (min-width: $breakpoint-md-min) {
+	.l-Index {
+		display: grid;
+		grid-template-columns: 1fr 20rem;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: "head head" "hero hero" "contents side" "foot foot"
+	}
+	.l-Index__header {
+		grid-area: head;
+	}
+	.l-Index__hero {
+		grid-area: hero;
+	}
+	.l-Index__contents {
+		grid-area: contents;
+		padding: 2rem;
+	}
+	.l-Index__side {
+		grid-area: side;
+		padding: 2rem;
+		padding-left: 0;
+	}
+	.l-Index__footer {
+		grid-area: foot;
+	}
+}

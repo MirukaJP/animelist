@@ -1,0 +1,27 @@
+// Sectioning
+// --------------------------------------------------
+section {
+	padding-top: $header-height;
+}
+
+// Mobile
+@media (max-width: $breakpoint-md-max) {
+	section {
+		padding-top: $header-height-sm;
+	}
+}
+
+
+// Typography
+// --------------------------------------------------
+.h2 {
+	margin: 0.5rem 0;
+	color: $primary;
+}
+
+// Mobile
+@media (max-width: $breakpoint-sm-max) {
+	.h2 {
+		padding: 0 1rem;
+	}
+}

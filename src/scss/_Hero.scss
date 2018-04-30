@@ -1,0 +1,18 @@
+.Hero {
+	position: relative;
+	height: 10rem;
+}
+.Hero__message {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 1rem;
+}
+
+// PC
+@media (min-width: $breakpoint-md-min) {
+	.Hero__message {
+		padding: 2rem;
+	}
+}

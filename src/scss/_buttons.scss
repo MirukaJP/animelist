@@ -1,0 +1,81 @@
+.c-btn {
+	padding: 0.5rem 1rem;
+	background: none;
+	border: 0;
+	border-radius: 2rem;
+	cursor: pointer;
+	outline: 0;
+	@extend .fade;
+	
+	&:focus {
+		outline: 0;
+	}
+}
+.c-btn.is-slim {
+	padding: 0.125rem 1rem;
+}
+
+.c-btn-secondary {
+	@extend .c-btn;
+	background-color: $shinichi;
+	color: $white;
+	
+	&:hover {
+		background-color: darken($shinichi, 10%);
+		color: $white;
+	}
+	
+	&.is-slim {
+		padding: 0.125rem 1rem;
+	}
+}
+.c-btn-primary {
+	@extend .c-btn;
+	background-color: $primary;
+	color: $white;
+
+	&:hover {
+		background-color: $primary-700;
+		color: $primary-300;
+	}
+
+	&.is-slim {
+		padding: 0.125rem 1rem;
+	}
+}
+
+.c-btn-muted {
+	@extend .c-btn;
+	background-color: $gray-500;
+	color: $white;
+	
+	&:hover {
+		background-color: $gray-600;
+		color: $primary-200;
+	}
+	
+	&.is-slim {
+		padding: 0.125rem 1rem;
+	}
+}
+
+$twitter-color: #2796DD;
+.twitter-hashtag-button {
+	display: inline-block;
+	padding: 1rem;
+	width: 100%;
+	max-width: 20rem;
+	background-color: $twitter-color;
+	border-radius: 2rem;
+	color: $white;
+	text-align: center;
+	text-decoration: none;
+	@extend .fade;
+	
+	&:hover {
+		background-color: darken($twitter-color, 5%);
+		box-shadow: inset 0 0 0 4px darken($twitter-color, 10%);
+		color: $white;
+		text-decoration: none;
+	}
+}

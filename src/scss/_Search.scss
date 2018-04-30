@@ -1,0 +1,58 @@
+::placeholder {
+	color: $gray-400;
+}
+::placeholder-shown {
+	color: $gray-400;
+}
+
+.Search {
+	padding-bottom: 1rem;
+}
+.Search__form {}
+.Search__input-keyword {
+	display: block;
+	padding: 0.5rem 1rem;
+	width: 100%;
+	border: 0;
+	box-shadow: 1px 1px 2px rgba(0,0,0, .1);
+	color: $primary-800;
+	font-size: 1.25rem;
+	@extend .fade;
+	
+	&:focus {
+		background-color: lighten($primary-100, 10%);
+		border: 0;
+		box-shadow: 0 0 0 2px $primary-100
+				   ,inset 0 0 0 2px $primary-200;
+		outline: 0;
+	}
+}
+.Search__option-group {
+	padding: 0.5rem 1rem;
+}
+.Search__checkbox-label {
+	margin: 0;
+	display: inline-block;
+	padding: 0.125rem 0.5rem;
+//	background-color: #fff;
+	color: $gray-800;
+	@extend .fade;
+}
+:checked + .Search__checkbox-label {
+	color: $primary;
+}
+.Search__btn-search {
+	padding: 0.5rem 1rem;
+	width: 10rem;
+	background: none;
+	background-color: $primary;
+	color: $primary-100;
+	font-size: 1.25rem;
+}
+
+// Tablet
+@media (min-width: $breakpoint-sm-min) {
+	.Search__option-group {
+		padding: 0.5rem 0;
+	}
+}
