@@ -33,17 +33,21 @@
 		<p class="Hero__message">
 			名探偵コナンのアニメをキャラクターやキーワードで検索できるリストです。
 		</p>
-	</div>
-	<div class="l-Index__contents">
-		<div class="Search">
+		<div id="js-search" class="Search">
 			<form class="Search__form">
 				<input type="text" class="Search__input-keyword" placeholder="キーワード">
 				<div class="Search__option-group c-Flex">
 					<div class="c-Flex__item u-mr-auto">
-						<input type="checkbox" id="main"><label class="Search__checkbox-label" for="main">メイン関連</label>
+						<input type="checkbox" id="main">
+						<label class="Search__checkbox-label" for="main">
+							<svg class="checkbox-mark" role="img" viewBox="0 0 92 92">
+								<use xlink:href="#checkmark"></use>
+							</svg>
+							メイン関連
+						</label>
 					</div>
 					<div class="c-Flex__item">
-						<button type="reset" class="c-btn-secondary is-slim">すべて表示</button>
+						<button type="reset" class="c-btn-dark is-slim">すべて表示</button>
 					</div>
 				</div>
 				<div style="display: none;">
@@ -51,8 +55,10 @@
 				</div>
 			</form>
 		</div>
+	</div>
+	<div class="l-Index__contents">
 		
-		<div class="ad">
+		<div class="ad" style="margin-bottom: -4rem;">
 			ad
 		</div>
 		
@@ -73,12 +79,15 @@
 						<td class="AnimeList__story-title">{{story.title}}</td>
 						<td class="AnimeList__story-date"><span class="AnimeList__label">放送日：</span>{{story.date}}</td>
 						<td class="AnimeList__story-tags" v-bind:data-importance="story.importance">{{story.tags}}</td>
+						<td class="AnimeList__story-origin"><span class="AnimeList__label">原作：</span>File.999-999</td>
+						<td class="AnimeList__story-disc"><span class="AnimeList__label">DVD/BD：</span>PART99 vol.99</td>
+						<td class="AnimeList__story-official"><a href="#">あらすじ（公式）</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</section>
 		
-		<div class="ad">
+		<div class="ad" style="margin-bottom: -4rem;">
 			ad
 		</div>
 		
@@ -101,19 +110,24 @@
 						<td class="AnimeList__story-date"><span class="AnimeList__label">公開日：</span>{{movie.date}}</td>
 <!--						<td class="AnimeList__story-tags">{{movie.tags}}</td>-->
 						<td class="AnimeList__story-tags">
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグタグタグタグタグタグタグタグタグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
-							<span class="AnimeList__story-tag">タグ</span>
+							<span class="AnimeList__story-tag tag--conan">コナン </span>
+							<span class="AnimeList__story-tag tag--shinichi">新一</span>
+							<span class="AnimeList__story-tag tag--ran">蘭</span>
+							<span class="AnimeList__story-tag tag--ai">灰原</span>
+							<span class="AnimeList__story-tag tag--hakase">博士</span>
+							<span class="AnimeList__story-tag tag--tanteidan">少年探偵団</span>
+							<span class="AnimeList__story-tag tag--heiji">平次</span>
+							<span class="AnimeList__story-tag tag--kazuha">和葉</span>
+							<span class="AnimeList__story-tag tag--akai">赤井</span>
+							<span class="AnimeList__story-tag tag--amuro">安室</span>
+							<span class="AnimeList__story-tag tag--keishicho">警視庁</span>
+							<span class="AnimeList__story-tag tag--fbi">FBI</span>
+							<span class="AnimeList__story-tag tag--kuro">黒の組織</span>
+							<span class="AnimeList__story-tag tag--sonoko">園子</span>
+							<span class="AnimeList__story-tag tag--kyogoku">京極</span>
+							<span class="AnimeList__story-tag tag--sera">世良</span>
+							<span class="AnimeList__story-tag tag--kid">キッド</span>
+							<span class="AnimeList__story-tag tag--other">その他</span>
 						</td>
 					</tr>
 				</tbody>
@@ -171,7 +185,7 @@
 			<div class="sample-box bg-sera">世良</div>
 			<div class="sample-box bg-akai">赤井</div>
 			<div class="sample-box bg-amuro">安室</div>
-			<div class="sample-box bg-shonen">少年探偵団</div>
+			<div class="sample-box bg-tanteidan">少年探偵団</div>
 			<div class="sample-box bg-keishicho">警視庁</div>
 			<div class="sample-box bg-keishicho">目暮</div>
 			<div class="sample-box bg-keishicho">高木</div>
@@ -227,6 +241,7 @@
 	<script src="assets/animelist.js"></script>
 	<script src="assets/menu.js"></script>
 	<script src="assets/pagescroll.js"></script>
+	<script src="assets/searchbar.js"></script>
 <!--	<script src="assets/components.js"></script>-->
 	
 	<!-- Data -->

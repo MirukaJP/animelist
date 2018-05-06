@@ -12,32 +12,109 @@ $gray-800: #24252c;
 $gray-900: #18191d;
 $black: #000;
 
-$primary: #96402a;
+$red:      #dd3838;
+$red-200:  #fcafaf;
+$blue:     #204bdd;
+$blue-200: #8fb1f2;
+$pink:     #e87cc7;
+$pink-200: #f4b3e0;
+$lilac:    #d4ace8;
+$lilac-200:#e1c6ef;
+$viridian: #006755;
+$viridian-200: #99d1c7;
+$lime:     #bdde5f;
+$lime-200:     #d7e6a9;
+$iceblue:  #80b5cc;
+$iceblue-200:  #dbe9ef;
+$purple:   #974cbf;
+$purple-200:   #c5add1;
+$skyblue:  #3697de;
+$skyblue-200:  #b1d5f0;
+$maroon:   #963333;
+$maroon-200:   #d69d9d;
+$yellow:   #e5a42a;
+$yellow-200:   #ffe1a9;
+$orange:   #e87018;
+$orange-200:   #f7b584;
+$cream:    #d8bc44;
+$cream-200:    #f2e4a7;
+$green:    #3ead4b;
+$green-200:    #8ece96;
+$oriental: #5578d6;
+$oriental-200: #a0b5ef;
+$beige:    #c1ad8d;
+$beige-200:    #d1c6b3;
+$terracotta: #A95045;
+
+$primary: $terracotta;
 $primary-100: lighten($primary, 50%);
 $primary-200: lighten($primary, 40%);
 $primary-300: lighten($primary, 30%);
 $primary-700: darken($primary, 10%);
 $primary-800: darken($primary, 20%);
 $primary-900: darken($primary, 30%);
+$secondary: $blue;
 
-$shinichi: #204bdd;
-$ran: #e87cc7;
-$ai: #d4ace8;
-$hakase: #c1ad8d;
-$heiji: #006755;
-$kazuha: #bdde5f;
-$kid: #dbe8ed;
-$sonoko: #e5a42a;
-$kyogoku: #974cbf;
-$sera: #3697de;
-$akai: #963333;
-$amuro: #e0d08b;
-$shonen: #3ead4b;
-$keishicho: #e87018;
-$fbi: #5578d6;
+$conan: $red;
+$shinichi: $blue;
+$ran: $pink;
+$ai: $lilac;
+$hakase: $beige;
+$heiji: $viridian;
+$kazuha: $lime;
+$kid: $iceblue;
+$sonoko: $yellow;
+$kyogoku: $purple;
+$sera: $skyblue;
+$akai: $maroon;
+$amuro: $cream;
+$tanteidan: $green;
+$keishicho: $orange;
+$fbi: $oriental;
 $kuro: $gray-800;
 
-$red: #dd3838;
+$charactor: (
+	conan: $conan,
+	shinichi: $shinichi,
+	ran: $ran,
+	ai: $ai,
+	hakase: $hakase,
+	heiji: $heiji,
+	kazuha: $kazuha,
+	kid: $kid,
+	sonoko: $sonoko,
+	kyogoku: $kyogoku,
+	sera: $sera,
+	akai: $akai,
+	amuro: $amuro,
+	tanteidan: $tanteidan,
+	keishicho: $keishicho,
+	fbi: $fbi,
+	other: $beige,
+	unkown: $gray-200,
+	kuro: $kuro
+);
+$charactor-light: (
+	conan: $red-200,
+	shinichi: $blue-200,
+	ran: $pink-200,
+	ai: $lilac-200,
+	hakase: $beige-200,
+	heiji: $viridian-200,
+	kazuha: $lime-200,
+	kid: $iceblue-200,
+	sonoko: $yellow-200,
+	kyogoku: $purple-200,
+	sera: $skyblue-200,
+	akai: $maroon-200,
+	amuro: $cream-200,
+	tanteidan: $green-200,
+	keishicho: $orange-200,
+	fbi: $oriental-200,
+	other: $beige-200,
+	unkown: $gray-200,
+	kuro: $gray-400
+);
 
 
 // Borders
@@ -47,7 +124,8 @@ $border-color: #e7ecf0;
 
 // Z-Index
 // --------------------------------------------------
-$zindex-header: 3000;
+$zindex-header: 1050;
+$zindex-search: 1000;
 
 
 // Break Points
@@ -84,14 +162,14 @@ $header-height-sm: 4rem;
 // Menu
 // --------------------------------------------------
 $menu-btn-bg: $gray-800;
-$menu-btn-color: $primary-200;
-$menu-btn-bg-hover: $primary;
-$menu-btn-color-hover: $primary-100;
+$menu-btn-color: $primary;
+$menu-btn-bg-hover: $gray-700;
+$menu-btn-color-hover: $white;
 
 $menu-bg: rgba($gray-800, .95);
 $menu-link: $gray-200;
 $menu-link-hover: $primary-100;
-$menu-link-bg-hover: rgba($primary, .3);
+$menu-link-bg-hover: rgba($gray-500, .75);
 
 
 // Anime List

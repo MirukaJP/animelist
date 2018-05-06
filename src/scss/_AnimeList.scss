@@ -9,7 +9,7 @@
 		border-top: 1px solid $border-color;
 	}
 	td, th {
-		padding: 0.5rem 1rem;
+		padding: 0.125rem 1rem;
 	}
 }
 .AnimeList__table-header {
@@ -38,8 +38,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	padding: 0.5rem 0;
-	
+	padding: 0.75rem 0;
 	background-color: $al-story-bg;
 //	&:nth-child(2n) {
 //		background-color: darken($al-story-bg, 2%);
@@ -84,7 +83,7 @@
 	&[data-importance="1"]:before {
 		@extend .story-badge;
 		content: "主要キャラ";
-		background-color: $primary-300;
+		background-color: $secondary;
 		color: $white;
 	}
 	&[data-importance="0"]:before {
@@ -96,8 +95,21 @@
 }
 .AnimeList__story-tag {
 	@extend .story-badge;
-	display: inline-block;
-	background-color: $gray-200;
+//	display: inline-block;
+//	background-color: $gray-200;
+}
+.AnimeList__story-origin {
+	flex: 1 0 7rem;
+	order: 5;
+}
+.AnimeList__story-disc {
+	flex: 1 0 9rem;
+	order: 6;
+}
+.AnimeList__story-official {
+	flex: 1 1 auto;
+	order: 7;
+	text-align: right;
 }
 .AnimeList__label {
 //	display: none;
@@ -138,8 +150,8 @@
 	.AnimeList__story-title {
 		flex: 1 1 100%;
 		order: 3;
-		padding: 0 1rem !important;
-		font-size: 1.25rem;
+//		padding: 0 1rem !important;
+		font-size: 1.125rem;
 	}
 	.AnimeList__story-date {
 //		flex: 0 0 auto;
@@ -149,11 +161,24 @@
 		flex: 1 1 100%;
 		order: 4;
 	}
+	.AnimeList__story-origin {
+		flex: 1 1 6rem;
+		order: 5;
+	}
+	.AnimeList__story-disc {
+		flex: 1 1 10rem;
+		order: 6;
+	}
+	.AnimeList__story-official {
+		flex: 1 1 100%;
+		order: 7;
+		text-align: center;
+	}
 	.AnimeList__label {
-		display: inline-block;
+//		display: inline-block;
 //		margin-left: 0.5rem;
 //		padding: 1px 0.5rem;
 //		background-color: #ccc;
-		font-size: 0.75rem;
+//		font-size: 0.75rem;
 	}
 }

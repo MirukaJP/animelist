@@ -17,11 +17,11 @@
 
 .c-btn-secondary {
 	@extend .c-btn;
-	background-color: $shinichi;
+	background-color: $secondary;
 	color: $white;
 	
 	&:hover {
-		background-color: darken($shinichi, 10%);
+		background-color: darken($secondary, 10%);
 		color: $white;
 	}
 	
@@ -36,6 +36,20 @@
 
 	&:hover {
 		background-color: $primary-700;
+		color: $primary-300;
+	}
+
+	&.is-slim {
+		padding: 0.125rem 1rem;
+	}
+}
+.c-btn-dark {
+	@extend .c-btn;
+	background-color: $gray-800;
+	color: $white;
+
+	&:hover {
+		background-color: $gray-900;
 		color: $primary-300;
 	}
 

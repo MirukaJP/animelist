@@ -10,9 +10,10 @@
 }
 .l-Index__hero {
 //	min-height: 20rem;
-	background-color: $primary;
+//	background-color: $primary;
 }
 .l-Index__contents {
+	position: relative;
 	background-color: $gray-100;
 }
 .l-Index__side {
@@ -40,7 +41,7 @@
 }
 
 // PC
-@media (min-width: $breakpoint-md-min) {
+@media (min-width: $breakpoint-lg-min) {
 	.l-Index {
 		display: grid;
 		grid-template-columns: 1fr 20rem;
