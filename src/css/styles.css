@@ -588,7 +588,8 @@ section {
 .Hero {
   position: relative;
   height: 13rem;
-  background-color: #A95045; }
+  background-color: #A95045;
+  background-image: url("../images/bg-bricks-fade-dark.png"); }
 
 .Hero__message {
   margin: 0;
