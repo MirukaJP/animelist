@@ -72,6 +72,23 @@
 		padding: 0.125rem 1rem;
 	}
 }
+.c-btn-close {
+	@extend .c-btn;
+	position: fixed;
+	top: 4px;
+	right: 4px;
+	z-index: $zindex-popover;
+	padding: 0;
+	width: 3rem;
+	height: 3rem;
+	background-color: $white;
+	color: $gray-700;
+
+	&:hover {
+		background-color: $gray-100;
+		color: $gray-700;
+	}
+}
 
 $twitter-color: #2796DD;
 .twitter-hashtag-button {

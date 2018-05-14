@@ -1,0 +1,35 @@
+.StatusTable {
+	margin: auto auto;
+	width: 100%;
+	max-width: 50rem;
+	background-color: $white;
+	border: 1px solid $gray-200;
+	tr {
+		border-bottom: 1px solid $gray-200;
+//		&:nth-child(2n) {
+//			background-color: lighten($gray-100, 2%);
+//		}
+	}
+	th, td {
+		padding: 0.25rem 0.5rem;
+		font-size: 0.875rem;
+		text-align: center;
+		
+	}
+	thead {
+		background-color: $gray-800;
+		
+		th {
+			color: $gray-400;
+		}
+	}
+	tbody {
+		td {
+			text-align: center;
+		}
+		.nothing {
+			background-color: lighten($gray-100, 2%);
+			color: rgba($gray-800,.5);
+		}
+	}
+}

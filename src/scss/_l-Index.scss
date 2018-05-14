@@ -18,6 +18,10 @@
 }
 .l-Index__side {
 	background-color: $gray-100;
+	
+	.block {
+		padding: 2rem 0;
+	}
 }
 .l-Index__footer {
 //	background-color: #ccc;
@@ -27,6 +31,12 @@
 @media (max-width: $breakpoint-md-max) {
 	.l-Index {
 		padding-top: $header-height-sm;
+	}
+	.l-Index__side {
+		padding-top: 1rem;
+		.block {
+			padding: 2rem 1rem 1rem;
+		}
 	}
 }
 

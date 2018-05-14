@@ -1,6 +1,6 @@
 .Hero {
 	position: relative;
-	height: 13rem;
+	height: 15rem;
 	background-color: $primary;
 	background-image: url('../images/bg-bricks-fade-dark.png');
 }
@@ -16,6 +16,6 @@
 // PC
 @media (min-width: $breakpoint-md-min) {
 	.Hero__message {
-		padding: 2rem;
+		padding: 1rem 2rem;
 	}
 }

@@ -20,15 +20,17 @@
 		overflow: hidden;
 		padding: 0;
 		width: 100%;
-		height: 3rem;
+		height: 3.25rem;
 	}
 }
-.Search__form {}
+.Search__form {
+	position: relative;
+}
 .Search__input-keyword {
 	display: block;
-	padding: 0.5rem 1rem;
+	padding: 0.5em 1rem;
 	width: 100%;
-	background-color: $primary-100;
+	background-color: $white;
 	border: 0;
 	box-shadow: 1px 1px 2px rgba(0,0,0, .1);
 	color: $primary-800;
@@ -36,18 +38,30 @@
 	@extend .fade;
 	
 	&:focus {
-		background-color: $white;
-		border: 0;
-//		box-shadow: 1px 1px 2px rgba(0,0,0, .1), inset 0 0 0 2px darken(#ceecff, 5%);
+		background-color: #ffd;
+//		box-shadow: 1px 1px 2px rgba(0,0,0, .1);
 		outline: 0;
 	}
 }
+.Search__controls {
+	position: relative;
+	padding: 0.5rem 0;
+}
 .Search__option-group {
-	padding: 0.5rem 1rem;
-	
-	input[type="checkbox"] {
-		display: none;
-	}
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 2.5rem;
+	right: 0;
+	z-index: 1000;;
+	padding: 0.5rem;
+	max-width: 21rem;
+	background-color: $white;
+	border-radius: 0.875rem;
+	box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+}
+.Search__checkbox {
+	display: none;
 }
 .Search__checkbox-label {
 	position: relative;
@@ -60,6 +74,13 @@
 	box-shadow: 1px 1px 2px rgba(0,0,0, .1);
 	color: $gray-600;
 	@extend .fade;
+}
+.Search__checkbox-label--options {
+	@extend .Search__checkbox-label;
+	background-color: $gray-100;
+	box-shadow: none;
+	margin: 0.25rem;
+	flex: 1 1 9rem;
 }
 .checkbox-mark {
 	display: block;
@@ -79,18 +100,67 @@
 		fill: $green;
 	}
 }
+:checked + .Search__checkbox-label--options {
+	background-color: $green;
+	color: $white;
+	box-shadow: none;
+	.checkbox-mark {
+		fill: $white;
+	}
+}
+.Search__btn-options {
+	padding: 0.125rem 1rem;
+	background-color: $white;
+	border: 0;
+	border-radius: 0.875rem;
+	color: $gray-700;
+	cursor: pointer;
+	@extend .fade;
+	&:hover, &:focus {
+		outline: 0;
+		background-color: $iceblue-200;
+	}
+	
+	&.is-shown {
+		padding: 0.125rem 1rem 0.5rem;
+		border-radius: 0.875rem 0.875rem 0 0;
+	}
+}
 .Search__btn-search {
-	padding: 0.5rem 1rem;
-	width: 10rem;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+//	margin-top: -1.25rem;
+//	padding: 0.5rem 1rem;
+	width: 2.5rem;
+	height: 2.5em;
 	background: none;
-	background-color: $primary;
-	color: $primary-100;
-	font-size: 1.25rem;
+	background-color: $white;
+	border: 0;
+	border-radius: 2rem;
+	color: $white;
+//	font-size: 1.25rem;
+	cursor: pointer;
+	@extend .fade;
+	&:hover, &:focus {
+		outline: 0;
+		background-color: $iceblue-200;
+		
+		.Search__icon {
+			fill: $blue;
+		}
+	}
+}
+.Search__icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	fill: $gray-600;
 }
 
 // Mobile
 @media (max-width: $breakpoint-md-max) {
 	.Search {
+		padding: 0 1rem;
 //		width: 100%;
 		&.is-sticky {
 			top: $header-height-sm;
@@ -100,7 +170,7 @@
 
 // Tablet
 @media (min-width: $breakpoint-sm-min) {
-	.Search__option-group {
-		padding: 0.5rem 0;
-	}
+//	.Search__option-group {
+//		padding: 0.5rem 0;
+//	}
 }
