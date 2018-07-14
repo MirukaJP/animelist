@@ -2696,10 +2696,10 @@ section {
   padding: 0.125rem 1rem; }
 
 .c-btn-secondary {
-  background-color: #204bdd;
+  background-color: #0e6bff;
   color: #fff; }
   .c-btn-secondary:hover {
-    background-color: #1a3cb0;
+    background-color: #0054da;
     color: #fff; }
   .c-btn-secondary.is-slim {
     padding: 0.125rem 1rem; }
@@ -2760,120 +2760,6 @@ section {
     box-shadow: inset 0 0 0 4px #1c79b5;
     color: #fff;
     text-decoration: none; }
-
-.tag--conan {
-  background-color: #fcafaf; }
-
-.tag--shinichi {
-  background-color: #8fb1f2; }
-
-.tag--ran {
-  background-color: #f4b3e0; }
-
-.tag--ai {
-  background-color: #e1c6ef; }
-
-.tag--hakase {
-  background-color: #d1c6b3; }
-
-.tag--heiji {
-  background-color: #99d1c7; }
-
-.tag--kazuha {
-  background-color: #d7e6a9; }
-
-.tag--kid {
-  background-color: #dbe9ef; }
-
-.tag--sonoko {
-  background-color: #ffe1a9; }
-
-.tag--kyogoku {
-  background-color: #c5add1; }
-
-.tag--sera {
-  background-color: #b1d5f0; }
-
-.tag--akai {
-  background-color: #d69d9d; }
-
-.tag--amuro {
-  background-color: #f2e4a7; }
-
-.tag--tanteidan {
-  background-color: #8ece96; }
-
-.tag--keishicho {
-  background-color: #f7b584; }
-
-.tag--fbi {
-  background-color: #a0b5ef; }
-
-.tag--other {
-  background-color: #d1c6b3; }
-
-.tag--unkown {
-  background-color: #e0e3ef; }
-
-.tag--kuro {
-  background-color: #a7adbf; }
-
-.text--conan {
-  color: #dd3838; }
-
-.text--shinichi {
-  color: #204bdd; }
-
-.text--ran {
-  color: #e87cc7; }
-
-.text--ai {
-  color: #d4ace8; }
-
-.text--hakase {
-  color: #c1ad8d; }
-
-.text--heiji {
-  color: #006755; }
-
-.text--kazuha {
-  color: #bdde5f; }
-
-.text--kid {
-  color: #80b5cc; }
-
-.text--sonoko {
-  color: #e5a42a; }
-
-.text--kyogoku {
-  color: #974cbf; }
-
-.text--sera {
-  color: #3697de; }
-
-.text--akai {
-  color: #963333; }
-
-.text--amuro {
-  color: #d8bc44; }
-
-.text--tanteidan {
-  color: #3ead4b; }
-
-.text--keishicho {
-  color: #e87018; }
-
-.text--fbi {
-  color: #5578d6; }
-
-.text--other {
-  color: #c1ad8d; }
-
-.text--unkown {
-  color: #e0e3ef; }
-
-.text--kuro {
-  color: #24252c; }
 
 .c-Flex {
   display: flex; }
@@ -2949,9 +2835,9 @@ section {
     color: #faf4f3;
     text-decoration: none; }
   .Menu__link[href="#tvanime"]:hover {
-    background-color: rgba(32, 75, 221, 0.75); }
+    background-color: rgba(14, 107, 255, 0.75); }
   .Menu__link[href="#movies"]:hover {
-    background-color: rgba(221, 56, 56, 0.75); }
+    background-color: rgba(237, 50, 50, 0.75); }
   .Menu__link[href="#request"]:hover {
     background-color: rgba(39, 150, 221, 0.75); }
 
@@ -3013,13 +2899,13 @@ section {
   display: block;
   padding: 0.5em 1rem;
   width: 100%;
-  background-color: #fff;
+  background-color: #f2f3f8;
   border: 0;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   color: #612e27;
   font-size: 1.25rem; }
   .Search__input-keyword:focus {
-    background-color: #ffd;
+    background-color: #fff;
     outline: 0; }
 
 .Search__controls {
@@ -3070,13 +2956,13 @@ section {
 
 :checked + .Search__checkbox-label, :checked + .Search__checkbox-label--options {
   background-color: #fff;
-  color: #3ead4b;
-  box-shadow: 0 0 0 3px #8ece96; }
+  color: #34a741;
+  box-shadow: 0 0 0 3px #96de9e; }
   :checked + .Search__checkbox-label .checkbox-mark, :checked + .Search__checkbox-label--options .checkbox-mark {
-    fill: #3ead4b; }
+    fill: #34a741; }
 
 :checked + .Search__checkbox-label--options {
-  background-color: #3ead4b;
+  background-color: #34a741;
   color: #fff;
   box-shadow: none; }
   :checked + .Search__checkbox-label--options .checkbox-mark {
@@ -3091,7 +2977,7 @@ section {
   cursor: pointer; }
   .Search__btn-options:hover, .Search__btn-options:focus {
     outline: 0;
-    background-color: #dbe9ef; }
+    background-color: #ebd2cf; }
   .Search__btn-options.is-shown {
     padding: 0.125rem 1rem 0.5rem;
     border-radius: 0.875rem 0.875rem 0 0; }
@@ -3100,19 +2986,20 @@ section {
   position: absolute;
   top: 5px;
   right: 5px;
+  padding: 0.5rem;
   width: 2.5rem;
   height: 2.5em;
   background: none;
-  background-color: #fff;
+  background-color: #f2f3f8;
   border: 0;
-  border-radius: 2rem;
-  color: #fff;
+  border-radius: 0.5rem;
+  color: #f2f3f8;
   cursor: pointer; }
   .Search__btn-search:hover, .Search__btn-search:focus {
     outline: 0;
-    background-color: #dbe9ef; }
+    background-color: #ed3232; }
     .Search__btn-search:hover .Search__icon, .Search__btn-search:focus .Search__icon {
-      fill: #204bdd; }
+      fill: #fff; }
 
 .Search__icon {
   width: 1.5rem;
@@ -3147,12 +3034,15 @@ section {
 
 .story-badge, .AnimeList__story-tags[data-importance="3"]:before, .AnimeList__story-tags[data-importance="2"]:before, .AnimeList__story-tags[data-importance="1"]:before, .AnimeList__story-tags[data-importance="0"]:before, .AnimeList__story-tag {
   display: inline-block;
-  margin: 0.125rem 0;
+  margin: 0.125rem 0.25rem 0.125rem 0;
   padding: 0.125rem 0.5rem;
   border-radius: 1rem;
+  background-color: #e0e3ef;
   font-size: 0.75rem;
   word-break: keep-all;
   white-space: nowrap; }
+  .story-badge:empty, .AnimeList__story-tags[data-importance="3"]:empty:before, .AnimeList__story-tags[data-importance="2"]:empty:before, .AnimeList__story-tags[data-importance="1"]:empty:before, .AnimeList__story-tags[data-importance="0"]:empty:before, .AnimeList__story-tag:empty {
+    display: none; }
 
 .AnimeList__story {
   display: flex;
@@ -3176,7 +3066,14 @@ section {
 .AnimeList__story-title {
   flex: 1 1 calc(100% - 5.5rem - 10.625rem);
   order: 2;
+  display: flex;
+  align-content: center;
   font-weight: bold; }
+
+.AnimeList__title {
+  flex: 1 1 auto;
+  margin: auto auto;
+  font-size: 1.125rem; }
 
 .AnimeList__story-date {
   flex: 0 0 10.625rem;
@@ -3187,40 +3084,98 @@ section {
   order: 4; }
   .AnimeList__story-tags[data-importance="3"]:before {
     content: "重要回";
-    background-color: #dd3838;
+    margin-right: 4px;
+    background-color: #ed3232;
     color: #fff; }
   .AnimeList__story-tags[data-importance="2"]:before {
     content: "関連あり";
-    background-color: #A95045;
+    margin-right: 4px;
+    background-color: #f47b23;
     color: #fff; }
   .AnimeList__story-tags[data-importance="1"]:before {
     content: "主要キャラ";
-    background-color: #204bdd;
+    margin-right: 4px;
+    background-color: #0e6bff;
     color: #fff; }
   .AnimeList__story-tags[data-importance="0"]:before {
     content: "関連なし";
+    margin-right: 4px;
     background-color: #e0e3ef;
     color: #747886; }
 
+.AnimeList__story-tag[data-color="red"] {
+  background-color: #f9b5b5; }
+.AnimeList__story-tag[data-color="blue"] {
+  background-color: #b6d2ff; }
+.AnimeList__story-tag[data-color="pink"] {
+  background-color: #f6cae8; }
+.AnimeList__story-tag[data-color="beige"] {
+  background-color: #e6e2db; }
+.AnimeList__story-tag[data-color="green"] {
+  background-color: #96de9e; }
+.AnimeList__story-tag[data-color="black"] {
+  background-color: #bbb; }
+.AnimeList__story-tag[data-color="teal"] {
+  background-color: #94d9c9; }
+.AnimeList__story-tag[data-color="yellow"] {
+  background-color: #f6e7a9; }
+.AnimeList__story-tag[data-color="violet"] {
+  background-color: #eed7f9; }
+.AnimeList__story-tag[data-color="snow"] {
+  background-color: #e2edf1; }
+.AnimeList__story-tag[data-color="royalblue"] {
+  background-color: #a6baf1; }
+.AnimeList__story-tag[data-color="crimson"] {
+  background-color: #e9a29d; }
+.AnimeList__story-tag[data-color="aqua"] {
+  background-color: #cdecfa; }
+.AnimeList__story-tag[data-color="ivory"] {
+  background-color: #f5eed3; }
+.AnimeList__story-tag[data-color="cian"] {
+  background-color: #afefef; }
+.AnimeList__story-tag[data-color="orange"] {
+  background-color: #fac49c; }
+.AnimeList__story-tag[data-color="default"] {
+  background-color: #e0e3ef; }
+
 .AnimeList__story-cast {
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   order: 5; }
 
 .AnimeList__story-staff {
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   order: 6; }
+
+.AnimeList__dl-item {
+  display: inline-block;
+  margin-right: 1.5rem; }
+  .AnimeList__dl-item[data-name] {
+    display: block;
+    margin-right: 0; }
 
 .AnimeList__dt {
   display: inline-block;
-  width: 7rem;
+  min-width: 7rem;
+  text-align: justify; }
+  .AnimeList__dt:empty {
+    display: none; }
+    .AnimeList__dt:empty + .AnimeList__dd {
+      margin-left: 0; }
+  .AnimeList__dt::after {
+    content: ":";
+    float: right; }
+
+.AnimeList__dd {
+  display: inline-block;
+  margin-left: 1rem;
   text-align: justify; }
 
 .AnimeList__story-origin {
-  flex: 1 0 7rem;
+  flex: 1 1 100%;
   order: 7; }
 
 .AnimeList__story-disc {
-  flex: 1 0 9rem;
+  flex: 1 1 100%;
   order: 8; }
 
 .AnimeList__story-official {
@@ -3233,21 +3188,31 @@ section {
   color: #747886;
   font-size: 0.75rem; }
 
+.AnimeList__ad {
+  flex: 1 1 auto;
+  order: 10; }
+
 .AnimeList__story.is-shown {
   display: flex;
-  flex-wrap: wrap;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1200;
   overflow-y: auto;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  padding: 1rem 0;
+  padding: 2rem 0;
   background-color: #fff;
   cursor: default; }
   .AnimeList__story.is-shown .AnimeList__story-title {
-    font-size: 1.25rem; }
+    width: 100%;
+    min-height: 10rem;
+    background-color: #18191d;
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: center; }
+  .AnimeList__story.is-shown .AnimeList__title {
+    font-size: 1.5rem; }
   .AnimeList__story.is-shown .AnimeList__story-date {
     margin-right: 2.5rem; }
   .AnimeList__story.is-shown .AnimeList__story-cast {
@@ -3261,68 +3226,63 @@ section {
 @media (max-width: 960px) {
   .AnimeList__story-id {
     flex: 0 0 5.5rem;
-    order: 1;
     margin-right: auto;
     text-align: left; }
 
   .AnimeList__story-title {
     flex: 1 1 100%;
-    order: 4;
     font-size: 1.125rem; }
 
-  .AnimeList__story-date {
-    order: 2; }
+  .AnimeList__title {
+    font-size: 1.125rem; }
 
   .AnimeList__story-tags {
-    flex: 1 1 100%;
-    order: 5; }
+    flex: 1 1 100%; }
 
   .AnimeList__story-cast {
-    flex: 1 1 100%;
-    order: 6; }
+    flex: 1 1 100%; }
 
   .AnimeList__story-staff {
-    flex: 1 1 100%;
-    order: 7; }
+    flex: 1 1 100%; }
 
   .AnimeList__story-origin {
-    flex: 1 1 100%;
-    order: 8; }
+    flex: 1 1 100%; }
 
   .AnimeList__story-disc {
-    flex: 1 1 100%;
-    order: 9; }
+    flex: 1 1 100%; }
 
   .AnimeList__story-official {
     flex: 1 1 100%;
-    order: 10;
-    text-align: center; }
-
-  .AnimeList__button {
-    flex: 0 0 auto;
-    order: 3;
-    padding: 0 !important;
     text-align: center; } }
 @media (min-width: 569px) {
   .AnimeList__story.is-shown {
     padding: 2rem; } }
 @media (min-width: 961px) {
   .AnimeList__story.is-shown {
+    align-items: flex-start;
     justify-content: center;
     padding: 4rem; }
+    .AnimeList__story.is-shown .AnimeList__story-id {
+      flex: 0 0 50rem; }
     .AnimeList__story.is-shown .AnimeList__story-title {
-      flex: 0 0 44.5rem; }
+      flex: 0 0 50rem;
+      height: 20rem;
+      vertical-align: middle; }
+    .AnimeList__story.is-shown .AnimeList__title {
+      font-size: 2.5rem; }
     .AnimeList__story.is-shown .AnimeList__story-date {
       flex: 0 0 50rem;
       margin: 0; }
     .AnimeList__story.is-shown .AnimeList__story-tags {
       flex: 0 0 50rem; }
-    .AnimeList__story.is-shown .AnimeList__story-cast {
-      flex: 0 0 50rem; }
-    .AnimeList__story.is-shown .AnimeList__story-staff,
+    .AnimeList__story.is-shown .AnimeList__story-cast,
+    .AnimeList__story.is-shown .AnimeList__story-staff {
+      flex: 0 0 25rem;
+      padding: 2rem 1rem 1rem; }
     .AnimeList__story.is-shown .AnimeList__story-origin,
     .AnimeList__story.is-shown .AnimeList__story-disc,
-    .AnimeList__story.is-shown .AnimeList__story-official {
+    .AnimeList__story.is-shown .AnimeList__story-official,
+    .AnimeList__story.is-shown .AnimeList__ad {
       flex: 0 0 50rem;
       text-align: left; } }
 .Request__heading {
@@ -3454,70 +3414,6 @@ section {
 
 .bg-gray-900 {
   background-color: #18191d;
-  color: #fff; }
-
-.bg-shinichi {
-  background-color: #204bdd;
-  color: #fff; }
-
-.bg-ran {
-  background-color: #e87cc7;
-  color: #fff; }
-
-.bg-ai {
-  background-color: #d4ace8;
-  color: #18191d; }
-
-.bg-hakase {
-  background-color: #c1ad8d;
-  color: #fff; }
-
-.bg-heiji {
-  background-color: #006755;
-  color: #fff; }
-
-.bg-kazuha {
-  background-color: #bdde5f;
-  color: #18191d; }
-
-.bg-kid {
-  background-color: #80b5cc;
-  color: #18191d; }
-
-.bg-sonoko {
-  background-color: #e5a42a;
-  color: #fff; }
-
-.bg-kyogoku {
-  background-color: #974cbf;
-  color: #fff; }
-
-.bg-sera {
-  background-color: #3697de;
-  color: #fff; }
-
-.bg-akai {
-  background-color: #963333;
-  color: #fff; }
-
-.bg-amuro {
-  background-color: #d8bc44;
-  color: #18191d; }
-
-.bg-tanteidan {
-  background-color: #3ead4b;
-  color: #fff; }
-
-.bg-keishicho {
-  background-color: #e87018;
-  color: #fff; }
-
-.bg-fbi {
-  background-color: #5578d6;
-  color: #fff; }
-
-.bg-kuro {
-  background-color: #24252c;
   color: #fff; }
 
 /*# sourceMappingURL=styles.css.map */

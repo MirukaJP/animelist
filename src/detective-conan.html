@@ -132,43 +132,64 @@
 		<section id="tvanime" class="AnimeList">
 			<h2 class="h2">TV放送</h2>
 			<table id="animeList" class="AnimeList__table">
-				<thead class="AnimeList__table-header">
-					<tr>
-						<th class="AnimeList__item-name" style="text-align: center;">話数</th>
-						<th class="AnimeList__item-name">タイトル</th>
-						<th class="AnimeList__item-name" style="text-align: center;">放送日</th>
-						<th class="AnimeList__item-name">タグ</th>
-					</tr>
-				</thead>
 				<tbody class="AnimeList__table-body">
 					<tr class="AnimeList__story" v-for="story in newStories" v-on:click="expand">
-						<td class="AnimeList__story-id">{{story.id}}話</td>
-						<td class="AnimeList__story-title">{{story.title}}</td>
+						<td class="AnimeList__story-id">{{story.num}}話</td>
+						<td class="AnimeList__story-title"><h2 class="AnimeList__title">{{story.title}}</h2></td>
 						<td class="AnimeList__story-date"><span class="AnimeList__label">放送日：</span>{{story.date}}</td>
 						<td class="AnimeList__story-tags" v-bind:data-importance="story.importance">
-							{{story.tags}}
-							<span class="AnimeList__story-tag tag--kuro">黒づくめ</span>
-							<span class="AnimeList__story-tag tag--conan">小さくなった名探偵</span>
-							<span class="AnimeList__story-tag tag--shinichi">新一</span>
-							<span class="AnimeList__story-tag tag--ran">蘭</span>
-							<span class="AnimeList__story-tag tag--other">小五郎</span>
-							<span class="AnimeList__story-tag tag--other">博士</span>
+							<!-- 値のあるタグのみ生成したい -->
+							<span class="AnimeList__story-tag" v-for="tag in story.tags" v-if="tag.tag" v-bind:data-color="tag.color">{{tag.tag}}</span>
 						</td>
-						<td class="AnimeList__story-cast" v-show="show"><span class="AnimeList__label">登場人物：</span><br>
-							<span class="AnimeList__dt">江戸川コナン</span>：高山みなみ<br>
-							<span class="AnimeList__dt">毛利蘭</span>：山崎和佳奈<br>
-							<span class="AnimeList__dt">毛利小五郎</span>：神谷明
+						<td class="AnimeList__story-cast" v-show="show">
+							<span class="AnimeList__label">登場人物：</span>
+							<!-- 値のある項目のみ生成 -->
+							<dl class="AnimeList__dl">
+								<div class="AnimeList__dl-item" v-for="chara in story.charactors" v-if="chara.name || chara.voice" v-bind:data-name="chara.name">
+									<dt class="AnimeList__dt">{{chara.name}}</dt><dd class="AnimeList__dd">{{chara.voice}}</dd>
+								</div>
+							</dl>
 						</td>
-						<td class="AnimeList__story-staff" v-show="show"><span class="AnimeList__label">制作スタッフ：</span><br>
-							<span class="AnimeList__dt">脚本</span>：柏原寛司<br>
-							<span class="AnimeList__dt">絵コンテ・演出</span>：こだま兼嗣<br>
-							<span class="AnimeList__dt">作画監督</span>：須藤昌朋
+						<td class="AnimeList__story-staff" v-show="show">
+							<span class="AnimeList__label">制作スタッフ：</span>
+							<!-- 値のある項目のみ生成 -->
+							<dl class="AnimeList__dl">
+								<div class="AnimeList__dl-item" v-if="story.staff_writer" data-name="脚本">
+									<dt class="AnimeList__dt">脚本</dt>
+									<dd class="AnimeList__dd" v-for="staff_writer in story.staff_writers" v-if="staff_writer.name">{{staff_writer.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="story.staff_constructor" data-name="構成">
+									<dt class="AnimeList__dt">構成</dt>
+									<dd class="AnimeList__dd" v-for="staff_constructor in story.staff_constructors" v-if="staff_constructor.name">{{staff_constructor.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="story.staff_storyboard" data-name="storyboard">
+									<dt class="AnimeList__dt">絵コンテ</dt>
+									<dd class="AnimeList__dd" v-for="staff_storyboard in story.staff_storyboards" v-if="staff_storyboard.name">{{staff_storyboard.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="story.staff_story_director" data-name="story_director">
+									<dt class="AnimeList__dt">演出</dt>
+									<dd class="AnimeList__dd" v-for="staff_story_director in story.staff_story_directors" v-if="staff_story_director.name">{{staff_story_director.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="story.staff_drawing_supervisior" data-name="drawing_supervisior">
+									<dt class="AnimeList__dt">作画監修</dt>
+									<dd class="AnimeList__dd" v-for="staff_drawing_supervisior in story.staff_drawing_supervisiors" v-if="staff_drawing_supervisior.name">{{staff_drawing_supervisior.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="story.staff_drawing_director" data-name="drawing_director">
+									<dt class="AnimeList__dt">作画監督</dt>
+									<dd class="AnimeList__dd" v-for="staff_drawing_director in story.staff_drawing_directors" v-if="staff_drawing_director.name">{{staff_drawing_director.name}}</dd>
+								</div>
+							</dl>
 						</td>
-						<td class="AnimeList__story-origin" v-show="show"><span class="AnimeList__label">原作：</span>File.999-999</td>
+						<td class="AnimeList__story-origin" v-show="show"><span class="AnimeList__label">原作：</span>{{story.original}}</td>
 						<td class="AnimeList__story-disc" v-show="show"><span class="AnimeList__label">DVD/BD：</span><br>
-							<a href=""><img class="dummy-afi" src="" alt=""><br>PART99 vol.99</a>
+							{{story.disk}}
 						</td>
-						<td class="AnimeList__story-official" v-show="show"><a href="#">あらすじ（公式）</a></td>
+						<td class="AnimeList__story-official" v-show="show"><a v-bind:href="story.url">あらすじ（公式）</a></td>
+						<td class="AnimeList__ad" v-show="show">
+							<div class="ad" style="margin-bottom: -4rem;">
+								ad
+							</div>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -188,65 +209,87 @@
 		<section id="movies" class="AnimeList">
 			<h2 class="h2">映画</h2>
 			<table id="movieList" class="AnimeList__table">
-				<thead class="AnimeList__table-header">
-					<tr>
-						<th class="AnimeList__item-name" style="text-align: center;">作数</th>
-						<th class="AnimeList__item-name">タイトル</th>
-						<th class="AnimeList__item-name" style="text-align: center;">公開日</th>
-						<th class="AnimeList__item-name">タグ</th>
-					</tr>
-				</thead>
 				<tbody class="AnimeList__table-body">
-					<tr class="AnimeList__story" v-for="movie in newMovies" v-bind:data-importance="movie.importance">
-						<td class="AnimeList__story-id">99</td>
-						<td class="AnimeList__story-title">{{movie.title}}</td>
-						<td class="AnimeList__story-date"><span class="AnimeList__label">公開日：</span>2999/99/99</td>
-						<td class="AnimeList__story-tags">
-							<span class="AnimeList__story-tag tag--conan">コナン </span>
-							<span class="AnimeList__story-tag tag--shinichi">新一</span>
-							<span class="AnimeList__story-tag tag--ran">蘭</span>
-							<span class="AnimeList__story-tag tag--ai">灰原</span>
-							<span class="AnimeList__story-tag tag--hakase">博士</span>
-							<span class="AnimeList__story-tag tag--tanteidan">少年探偵団</span>
-							<span class="AnimeList__story-tag tag--heiji">平次</span>
-							<span class="AnimeList__story-tag tag--kazuha">和葉</span>
-							<span class="AnimeList__story-tag tag--akai">赤井</span>
-							<span class="AnimeList__story-tag tag--amuro">安室</span>
-							<span class="AnimeList__story-tag tag--keishicho">警視庁</span>
-							<span class="AnimeList__story-tag tag--fbi">FBI</span>
-							<span class="AnimeList__story-tag tag--kuro">黒の組織</span>
-							<span class="AnimeList__story-tag tag--sonoko">園子</span>
-							<span class="AnimeList__story-tag tag--kyogoku">京極</span>
-							<span class="AnimeList__story-tag tag--sera">世良</span>
-							<span class="AnimeList__story-tag tag--kid">キッド</span>
-							<span class="AnimeList__story-tag tag--other">その他</span>
+					<tr class="AnimeList__story" v-for="movie in newStories" v-on:click="expand">
+						<td class="AnimeList__story-id">{{movie.num}}話</td>
+						<td class="AnimeList__story-title"><h2 class="AnimeList__title">{{movie.title}}</h2></td>
+						<td class="AnimeList__story-date"><span class="AnimeList__label">公開日：</span>{{movie.date}}</td>
+						<td class="AnimeList__story-tags" v-bind:data-importance="movie.importance">
+							<!-- 値のあるタグのみ生成したい -->
+							<span class="AnimeList__story-tag" v-for="tag in movie.tags" v-if="tag.tag" v-bind:data-color="tag.color">{{tag.tag}}</span>
 						</td>
-						<td class="AnimeList__story-cast"><span class="AnimeList__label">登場人物：</span><br>
-							<span class="AnimeList__dt">江戸川コナン</span>：高山みなみ<br>
-							<span class="AnimeList__dt">毛利蘭</span>：山崎和佳奈<br>
-							<span class="AnimeList__dt">毛利小五郎</span>：神谷明
+						<td class="AnimeList__story-cast" v-show="show">
+							<span class="AnimeList__label">登場人物：</span>
+							<!-- 値のある項目のみ生成 -->
+							<dl class="AnimeList__dl">
+								<div class="AnimeList__dl-item" v-for="chara in movie.charactors" v-if="chara.name || chara.voice" v-bind:data-name="chara.name">
+									<dt class="AnimeList__dt">{{chara.name}}</dt><dd class="AnimeList__dd">{{chara.voice}}</dd>
+								</div>
+							</dl>
 						</td>
-						<td class="AnimeList__story-staff"><span class="AnimeList__label">制作スタッフ：</span><br>
-							<span class="AnimeList__dt">脚本</span>：柏原寛司<br>
-							<span class="AnimeList__dt">絵コンテ・演出</span>：こだま兼嗣<br>
-							<span class="AnimeList__dt">作画監督</span>：須藤昌朋
+						<td class="AnimeList__story-staff" v-show="show">
+							<span class="AnimeList__label">制作スタッフ：</span>
+							<!-- 値のある項目のみ生成 -->
+							<dl class="AnimeList__dl">
+								<div class="AnimeList__dl-item" v-if="movie.staff_writer" data-name="脚本">
+									<dt class="AnimeList__dt">脚本</dt>
+									<dd class="AnimeList__dd" v-for="staff_writer in movie.staff_writers" v-if="staff_writer.name">{{staff_writer.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="movie.staff_constructor" data-name="構成">
+									<dt class="AnimeList__dt">構成</dt>
+									<dd class="AnimeList__dd" v-for="staff_constructor in movie.staff_constructors" v-if="staff_constructor.name">{{staff_constructor.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="movie.staff_storyboard" data-name="storyboard">
+									<dt class="AnimeList__dt">絵コンテ</dt>
+									<dd class="AnimeList__dd" v-for="staff_storyboard in movie.staff_storyboards" v-if="staff_storyboard.name">{{staff_storyboard.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="movie.staff_story_director" data-name="story_director">
+									<dt class="AnimeList__dt">演出</dt>
+									<dd class="AnimeList__dd" v-for="staff_story_director in movie.staff_story_directors" v-if="staff_story_director.name">{{staff_story_director.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="movie.staff_drawing_supervisior" data-name="drawing_supervisior">
+									<dt class="AnimeList__dt">作画監修</dt>
+									<dd class="AnimeList__dd" v-for="staff_drawing_supervisior in movie.staff_drawing_supervisiors" v-if="staff_drawing_supervisior.name">{{staff_drawing_supervisior.name}}</dd>
+								</div>
+								<div class="AnimeList__dl-item" v-if="movie.staff_drawing_director" data-name="drawing_director">
+									<dt class="AnimeList__dt">作画監督</dt>
+									<dd class="AnimeList__dd" v-for="staff_drawing_director in movie.staff_drawing_directors" v-if="staff_drawing_director.name">{{staff_drawing_director.name}}</dd>
+								</div>
+							</dl>
 						</td>
-						<td class="AnimeList__story-disc"><span class="AnimeList__label">DVD/BD：</span><br>
+						<td class="AnimeList__story-origin" v-show="show"><span class="AnimeList__label">原作：</span>File.999-999</td>
+						<td class="AnimeList__story-disc" v-show="show"><span class="AnimeList__label">DVD/BD：</span><br>
 							<a href=""><img class="dummy-afi" src="" alt=""><br>PART99 vol.99</a>
 						</td>
-						<td class="AnimeList__story-official"><a href="#">あらすじ（公式）</a></td>
+						<td class="AnimeList__story-official" v-show="show"><a href="#">あらすじ（公式）</a></td>
+						<td class="AnimeList__ad" v-show="show">
+							<div class="ad" style="margin-bottom: -4rem;">
+								ad
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="c-btn-close" v-show="show" v-on:click="unexpand">
+								<svg class="icon-close" role="img" viewBox="0 0 92 92">
+									<title>Close</title>
+									<use xlink:href="#cross"></use>
+								</svg>
+							</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>
-<!--
-			<button type="button" class="c-btn-close" v-show="show" v-on:click="unexpand" style="margin-top: -0.5rem;margin-right: 0.25rem;">
-				<svg class="icon-close" role="img" viewBox="0 0 92 92">
-					<title>Close</title>
-					<use xlink:href="#cross"></use>
-				</svg>
-			</button>
--->
 		</section>
+		
+<!--
+		<button type="button" class="c-btn-close" v-show="show" v-on:click="unexpand">
+			<svg class="icon-close" role="img" viewBox="0 0 92 92">
+				<title>Close</title>
+				<use xlink:href="#cross"></use>
+			</svg>
+		</button>
+-->
 
 		<div class="ad">
 			ad

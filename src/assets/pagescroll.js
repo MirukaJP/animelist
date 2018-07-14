@@ -10,10 +10,10 @@
 pageScroll();
 function pageScroll() {
 	var pageLink = document.querySelectorAll('a[href^="#"]');
-	console.log('Set!' + pageLink);
+//	console.log('Set!' + pageLink);
 	
 	pageLink.forEach(function (link) {
-		console.log(link.textContent);
+//		console.log(link.textContent);
 		link.onclick = scrollFunc;
 	});
 }
@@ -22,7 +22,7 @@ function scrollFunc(event){
 	event.preventDefault();
 	
 	var linkTarget = this.getAttribute('href');
-	console.log('Click!' + linkTarget);
+//	console.log('Click!' + linkTarget);
 	
 	var targetObj = document.querySelector(linkTarget);
 	var currentY = window.pageYOffset;
@@ -47,6 +47,6 @@ function scrollFunc(event){
 		var yOffset = window.pageYOffset;
 		var yPoint = yOffset + step;
 		window.scrollTo(0, yPoint);
-		console.log('currentY:' + currentY + ' / distance:' + distance + ' / destY:' + destY + ' / times:' + times + ' / step:' + step + ' / yOffset:' + yOffset +' / yPoint:' + yPoint);
+//		console.log('currentY:' + currentY + ' / distance:' + distance + ' / destY:' + destY + ' / times:' + times + ' / step:' + step + ' / yOffset:' + yOffset +' / yPoint:' + yPoint);
 	}, interval);
 }

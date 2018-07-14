@@ -30,12 +30,17 @@ $transition: all 0.35s ease-in-out;
 //	position: absolute;
 //	top: 3px;
 //	left: 3px;
-	margin: 0.125rem 0;
+	margin: 0.125rem 0.25rem 0.125rem 0;
 	padding: 0.125rem 0.5rem;
 	border-radius: 1rem;
+	background-color: $gray-200;
 	font-size: 0.75rem;
 	word-break: keep-all;
 	white-space: nowrap;
+	
+	&:empty {
+		display: none;
+	}
 }
 .AnimeList__story {
 	display: flex;
@@ -69,7 +74,14 @@ $transition: all 0.35s ease-in-out;
 	flex: 1 1 calc(100% - 5.5rem - 10.625rem);
 	order: 2;
 	
+	display: flex;
+	align-content: center;
 	font-weight: bold;
+}
+.AnimeList__title {
+	flex:  1 1 auto;
+	margin: auto auto;
+	font-size: 1.125rem;
 }
 .AnimeList__story-date {
 	flex: 0 0 10.625rem;
@@ -84,24 +96,28 @@ $transition: all 0.35s ease-in-out;
 	&[data-importance="3"]:before {
 		@extend .story-badge;
 		content: "重要回";
+		margin-right: 4px;
 		background-color: $red;
 		color: $white;
 	}
 	&[data-importance="2"]:before {
 		@extend .story-badge;
 		content: "関連あり";
-		background-color: $primary;
+		margin-right: 4px;
+		background-color: $orange;
 		color: $white;
 	}
 	&[data-importance="1"]:before {
 		@extend .story-badge;
 		content: "主要キャラ";
+		margin-right: 4px;
 		background-color: $secondary;
 		color: $white;
 	}
 	&[data-importance="0"]:before {
 		@extend .story-badge;
 		content: "関連なし";
+		margin-right: 4px;
 		background-color: $gray-200;
 		color: $gray-500;
 	}
@@ -110,26 +126,103 @@ $transition: all 0.35s ease-in-out;
 	@extend .story-badge;
 //	display: inline-block;
 //	background-color: $gray-200;
+	
+	&[data-color="red"] { // Conan
+		background-color: $red-200;
+	}
+	&[data-color="blue"] { // Shinichi
+		background-color: $blue-200;
+	}
+	&[data-color="pink"] { // Ran
+		background-color: $pink-200;
+	}
+	&[data-color="beige"] { // Family
+		background-color: $beige-200;
+	}
+	&[data-color="green"] { // Tanteidan & School
+		background-color: $green-200;
+	}
+	&[data-color="black"] { // Kuro
+		background-color: $black-200;
+	}
+	&[data-color="teal"] { // Heiji & Kazuha
+		background-color: $teal-200;
+	}
+	&[data-color="yellow"] { // Sonoko & Friends
+		background-color: $yellow-200;
+	}
+	&[data-color="violet"] { // Haibara
+		background-color: $violet-200;
+	}
+	&[data-color="snow"] { // Kid
+		background-color: $snow-200;
+	}
+	&[data-color="royalblue"] { // FBI
+		background-color: $royalblue-200;
+	}
+	&[data-color="crimson"] { // Akai & Okiya
+		background-color: $crimson-200;
+	}
+	&[data-color="aqua"] { // Sera
+		background-color: $aqua-200;
+	}
+	&[data-color="ivory"] { // Amuro
+		background-color: $ivory-200;
+	}
+	&[data-color="cian"] { // CIA & Mizunashi & Hondo
+		background-color: $cian-200;
+	}
+	&[data-color="orange"] { // Police
+		background-color: $orange-200;
+	}
+	&[data-color="default"] { // Other
+		background-color: $gray-200;
+	}
 }
 .AnimeList__story-cast {
-	flex: 1 1 50%;
+	flex: 1 1 100%;
 	order: 5;
 }
 .AnimeList__story-staff {
-	flex: 1 1 50%;
+	flex: 1 1 100%;
 	order: 6;
+}
+.AnimeList__dl-item {
+	display: inline-block;
+	margin-right: 1.5rem;
+	
+	&[data-name] {
+		display: block;
+		margin-right: 0;
+	}
 }
 .AnimeList__dt {
 	display: inline-block;
-	width: 7rem;
+	min-width: 7rem;
+	text-align: justify;
+	&:empty {
+		display: none;
+		& + .AnimeList__dd {
+			margin-left: 0;
+		}
+	}
+	&::after {
+		content: ":";
+		float: right;
+	}
+}
+.AnimeList__dd {
+	display: inline-block;
+	margin-left: 1rem;
+//	width: 7rem;
 	text-align: justify;
 }
 .AnimeList__story-origin {
-	flex: 1 0 7rem;
+	flex: 1 1 100%;
 	order: 7;
 }
 .AnimeList__story-disc {
-	flex: 1 0 9rem;
+	flex: 1 1 100%;
 	order: 8;
 }
 .AnimeList__story-official {
@@ -146,23 +239,49 @@ $transition: all 0.35s ease-in-out;
 	color: $gray-500;
 	font-size: 0.75rem;
 }
+.AnimeList__ad {
+	flex: 1 1 auto;
+	order: 10;
+}
 
 // Modal
 .AnimeList__story.is-shown {
 	display: flex;
-	flex-wrap: wrap;
+//	flex-wrap: wrap;
 	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: $zindex-popover;
+//	transform: translate(-50%,0);
 	overflow-y: auto;
-	width: 100vw;
+	width: 100%;
+//	max-width: 50rem;
 	height: 100vh;
-	padding: 1rem 0;
+	padding: 2rem 0;
 	background-color: $al-story-bg;
 	cursor: default;
+//	&:before {
+//		content: '';
+//		position: absolute;
+//		top: 0;
+//		left: -50%;
+//		z-index: -1;
+//		display: block;
+//		width: 100vw;
+//		height: 100vh;
+//		background-color: $primary;
+//	}
+	
 	.AnimeList__story-title {
+		width: 100%;
+		min-height: 10rem;
+		background-color: $gray-900;
+		color: $white;
 		font-size: 1.25rem;
+		text-align: center;
+	}
+	.AnimeList__title {
+		font-size: 1.5rem;
 	}
 	.AnimeList__story-date {
 		margin-right: 2.5rem;
@@ -183,51 +302,54 @@ $transition: all 0.35s ease-in-out;
 @media (max-width: $breakpoint-lg-max) {
 	.AnimeList__story-id {
 		flex: 0 0 5.5rem;
-		order: 1;
+//		order: 1;
 		margin-right: auto;
 		text-align: left;
 	}
 	.AnimeList__story-title {
 		flex: 1 1 100%;
-		order: 4;
+//		order: 4;
 //		padding: 0 1rem !important;
+		font-size: 1.125rem;
+	}
+	.AnimeList__title {
 		font-size: 1.125rem;
 	}
 	.AnimeList__story-date {
 //		flex: 0 0 auto;
-		order: 2;
+//		order: 2;
 	}
 	.AnimeList__story-tags {
 		flex: 1 1 100%;
-		order: 5;
+//		order: 5;
 	}
 	.AnimeList__story-cast {
 		flex: 1 1 100%;
-		order: 6;
+//		order: 6;
 	}
 	.AnimeList__story-staff {
 		flex: 1 1 100%;
-		order: 7;
+//		order: 7;
 	}
 	.AnimeList__story-origin {
 		flex: 1 1 100%;
-		order: 8;
+//		order: 8;
 	}
 	.AnimeList__story-disc {
 		flex: 1 1 100%;
-		order: 9;
+//		order: 9;
 	}
 	.AnimeList__story-official {
 		flex: 1 1 100%;
-		order: 10;
+//		order: 10;
 		text-align: center;
 	}
-	.AnimeList__button {
-		flex: 0 0 auto;
-		order: 3;
-		padding: 0 !important;
-		text-align: center;
-	}
+//	.AnimeList__button {
+//		flex: 0 0 auto;
+//		order: 3;
+//		padding: 0 !important;
+//		text-align: center;
+//	}
 }
 
 // Tablet
@@ -240,10 +362,19 @@ $transition: all 0.35s ease-in-out;
 // PC
 @media (min-width: $breakpoint-lg-min) {
 	.AnimeList__story.is-shown {
+		align-items: flex-start;
 		justify-content: center;
 		padding: 4rem;
+		.AnimeList__story-id {
+			flex: 0 0 50rem;
+		}
 		.AnimeList__story-title {
-			flex: 0 0 44.5rem;
+			flex: 0 0 50rem;
+			height: 20rem;
+			vertical-align: middle;
+		}
+		.AnimeList__title {
+			font-size: 2.5rem;
 		}
 		.AnimeList__story-date {
 			flex: 0 0 50rem;
@@ -252,13 +383,15 @@ $transition: all 0.35s ease-in-out;
 		.AnimeList__story-tags {
 			flex: 0 0 50rem;
 		}
-		.AnimeList__story-cast {
-			flex: 0 0 50rem;
+		.AnimeList__story-cast,
+		.AnimeList__story-staff {
+			flex: 0 0 25rem;
+			padding: 2rem 1rem 1rem;
 		}
-		.AnimeList__story-staff,
 		.AnimeList__story-origin,
 		.AnimeList__story-disc,
-		.AnimeList__story-official {
+		.AnimeList__story-official,
+		.AnimeList__ad {
 			flex: 0 0 50rem;
 			text-align: left;
 		}

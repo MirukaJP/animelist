@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/MirukaJP/animelist#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "gulp": "^3.9.1",
     "gulp-cheerio": "^0.6.3",
     "gulp-path": "^4.0.0",
